@@ -18,8 +18,8 @@ class TreeNodeSolution : public Solution {
  public:
   void Test() override;
   // *************** Start of HOT  *****************//
+  // 中序遍历，左，中，右，深度优先
   vector<int> inorderTraversal(TreeNode *root) {
-    // 中序遍历，左，中，右，深度优先
     vector<int> ans;
     stack<TreeNode *> helper;
     while (true) {
@@ -39,6 +39,35 @@ class TreeNodeSolution : public Solution {
       root = root->right;
     }
     return ans;
+  }
+  // 对称二叉树，类似广度优先思路，每次拿2个节点并比较，
+  // 之后将两个节点的左右子节点按相反的顺序插入队列中
+  bool isSymmetric(TreeNode *root) {
+    if (!root) {
+      return true;
+    }
+    deque<TreeNode *> helper;
+    helper.push_back(root->left);
+    helper.push_back(root->right);
+    while (!helper.empty()) {
+      auto val1 = helper.front();
+      helper.pop_front();
+      auto val2 = helper.front();
+      helper.pop_front();
+      if (val1 && val2 && val1->val == val2->val) {
+        helper.push_back(val1->right);
+        helper.push_back(val2->left);
+        helper.push_back(val1->left);
+        helper.push_back(val2->right);
+      } else {
+        if (!val1 && !val2) {
+          continue;
+        } else {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 // *************** End of HOT  *****************//
 
