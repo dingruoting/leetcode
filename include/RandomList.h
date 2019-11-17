@@ -25,6 +25,25 @@ class RandomList : public Solution {
 //  该指针可以指向链表中的任何节点或空节点。
 //  要求返回这个链表的深拷贝。
   Node *copyRandomList(Node *head) {
+    Node *pre = nullptr;
+    Node pre_ans(0, nullptr, nullptr);
+    Node *cur = &pre_ans;
+    unordered_map<Node *, Node *> relation;
+    Node *pHead = head;
+    while (pHead) {
+      cur->next = new Node(pHead->val, nullptr, nullptr);
+      relation[pHead] = cur->next;
+      pHead = pHead->next;
+      cur = cur->next;
+    }
+    pHead = head;
+    cur = pre_ans.next;
+    while (pHead) {
+      cur->random = relation[pHead->random];
+      cur = cur->next;
+      pHead = pHead->next;
+    }
+    return pre_ans.next;
   }
   void Test() override;
 };
