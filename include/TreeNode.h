@@ -69,6 +69,34 @@ class TreeNodeSolution : public Solution {
     }
     return true;
   }
+  // 层次遍历
+  vector<vector<int>> levelOrder(TreeNode *root) {
+    vector<vector<int>> ans;
+
+    deque<TreeNode *> helper;
+    if (root) {
+      helper.push_back(root);
+    }
+    // 队列中每次保存二叉树一层的节点指针
+    while (!helper.empty()) {
+      vector<int> layer_result;
+      // 开始遍历本层时，记录本层节点数，作为本层遍历完毕的条件
+      auto size = helper.size();
+      for (auto i = 0; i < size; ++i) {
+        auto val = helper.front();
+        helper.pop_front();
+        layer_result.push_back(val->val);
+        if (val->left) {
+          helper.push_back(val->left);
+        }
+        if (val->right) {
+          helper.push_back(val->right);
+        }
+      }
+      ans.push_back(layer_result);
+    }
+    return ans;
+  }
 // *************** End of HOT  *****************//
 
 
