@@ -50,8 +50,16 @@ void TreeNodeSolution::Test() {
   root.right = &node2;
   node2.left = &node3;
 
-  auto res = inorderTraversal(&root);
-  PrintVector(res);
+//  auto res = inorderTraversal(&root);
+//  PrintVector(res);
+  auto ans = levelOrder(&root);
+  for(const auto& level : ans){
+    std::cout << "[";
+    for(const auto& val : level){
+      std::cout << val << " ";
+    }
+    std::cout << "]";
+  }
 //  PrintNodeLevelWithNull(&root);
 
 }

@@ -34,7 +34,6 @@ class ListNodeSolution : public Solution {
     }
     return preNode.next;
   }
-
   ListNode *removeNthFromEnd(ListNode *head, int n) {
     if (n <= 0) {
       return head;

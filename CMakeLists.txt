@@ -3,4 +3,4 @@ project(Coding)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Coding main.cpp src/Solution.cpp include/Solution.h src/ListNodeSolution.cpp include/ListNodeSolution.h src/VectorSolution.cpp include/VectorSolution.h src/TreeNode.cpp include/TreeNode.h src/StingSolution.cpp include/StingSolution.h src/Math.cpp include/Math.h src/Hash.cpp include/Hash.h)
+add_executable(Coding main.cpp src/Solution.cpp include/Solution.h src/ListNodeSolution.cpp include/ListNodeSolution.h src/VectorSolution.cpp include/VectorSolution.h src/TreeNode.cpp include/TreeNode.h src/StingSolution.cpp include/StingSolution.h src/Math.cpp include/Math.h src/Hash.cpp include/Hash.h include/RandomList.h src/RandomList.cpp)

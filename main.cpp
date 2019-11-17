@@ -4,6 +4,7 @@
 #include "include/TreeNode.h"
 #include "include/Math.h"
 #include "include/Hash.h"
+#include "include/RandomList.h"
 int main() {
   std::cout << "Hello, World!" << std::endl;
   Solution *s = nullptr;
@@ -11,7 +12,8 @@ int main() {
 //  s = new TreeNodeSolution();
 //  s = new Math();
 //  s = new ListNodeSolution();
-  s = new Hash();
+  s = new RandomList();
+//  s = new Hash();
   s->Test();
   delete s;
 
