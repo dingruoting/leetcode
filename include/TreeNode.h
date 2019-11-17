@@ -97,6 +97,38 @@ class TreeNodeSolution : public Solution {
     }
     return ans;
   }
+  // 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数
+  int maxDepth_Recursive(TreeNode *root) {
+    if (!root) {
+      return 0;
+    }
+    return 1 + max(maxDepth_Recursive(root->left),
+                   maxDepth_Recursive(root->right));
+  }
+  int maxDepth_BFS(TreeNode *root) {
+    // 层次遍历，遍历到最后一层的时候，深度也得到了。
+    if (!root) {
+      return 0;
+    }
+    int ans = 0;
+    deque<TreeNode *> helper;
+    helper.push_back(root);
+    while (!helper.empty()) {
+      ans++;
+      auto num = helper.size();
+      for (auto i = 0; i < num; ++i) {
+        auto node = helper.front();
+        helper.pop_front();
+        if (node->left) {
+          helper.push_back(node->left);
+        }
+        if (node->right) {
+          helper.push_back(node->right);
+        }
+      }
+    }
+    return ans;
+  }
 // *************** End of HOT  *****************//
 
 
