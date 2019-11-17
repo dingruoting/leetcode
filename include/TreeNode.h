@@ -14,6 +14,8 @@ struct TreeNode {
 class TreeNodeSolution : public Solution {
  public:
   void Test() override;
+  // *************** Start of HOT  *****************//
+  // *************** End of HOT  *****************//
   bool isSameTree(TreeNode *p, TreeNode *q) {
     // 递归解法，前序遍历
     if (p && q) {

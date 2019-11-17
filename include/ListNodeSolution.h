@@ -17,6 +17,11 @@ class ListNodeSolution : public Solution {
  public:
   void Test() override;
  private:
+  // *************** Start of HOT  *****************//
+/*
+ * 使用哨兵节点 "prehead" 需要删除头节点
+ * 双指针，一个走得快，一个走得慢
+ */
   ListNode *removeNthFromEnd(ListNode *head, int n) {
     if (n <= 0) {
       return head;
@@ -38,6 +43,9 @@ class ListNodeSolution : public Solution {
     slower->next = slower->next->next;
     return prehead.next;
   }
+  /*
+   * 迭代法，使用哨兵节点
+   */
   ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
     ListNode *pre_head = new ListNode(0);
     auto begin = pre_head;
@@ -56,6 +64,7 @@ class ListNodeSolution : public Solution {
     delete begin;
     return output;
   }
+  // *************** End of HOT  *****************//
 
 };
 

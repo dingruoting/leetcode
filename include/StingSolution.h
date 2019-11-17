@@ -9,7 +9,9 @@ class StingSolution : public Solution {
  public:
   void Test() override;
  private:
+  // *************** Start of HOT  *****************//
   int lengthOfLongestSubstring(string s) {
+    // 哈希表，滑动窗口 O(n)
     int max_length = 0;
     int i = 0;
     int j = 0;
@@ -24,6 +26,45 @@ class StingSolution : public Solution {
     }
     return max_length;
   }
+  class Parentheses {
+    bool isFirtElement(char a) {
+      return a == '(' || a == '[' || a == '{';
+    }
+    bool isMatch(char a, char b) {
+      if (a == '(') {
+        return b == ')';
+      }
+      if (a == '[') {
+        return b == ']';
+      }
+      if (a == '{') {
+        return b == '}';
+      }
+      return false;
+    }
+    /*
+     * 使用栈
+     */
+    bool isValid(string s) {
+      stack<char> windows;
+      auto itr = s.begin();
+      while (itr != s.end()) {
+        if (windows.empty() || isFirtElement(*itr)) {
+          windows.push(*itr);
+        } else {
+          if (isMatch(windows.top(), *itr)) {
+            windows.pop();
+          } else {
+            return false;
+          }
+        }
+        itr++;
+      }
+      return windows.empty();
+    }
+  }; // end of Parentheses
+  // *************** End of HOT  *****************//
+
   int reverse(int x) {
     int y = 0;
     while (x != 0) {
@@ -39,39 +80,6 @@ class StingSolution : public Solution {
     }
     return y;
   }
-  bool isFirtElement(char a) {
-    return a == '(' || a == '[' || a == '{';
-  }
-  bool isMatch(char a, char b) {
-    if (a == '(') {
-      return b == ')';
-    }
-    if (a == '[') {
-      return b == ']';
-    }
-    if (a == '{') {
-      return b == '}';
-    }
-    return false;
-  }
-  bool isValid(string s) {
-    stack<char> windows;
-    auto itr = s.begin();
-    while (itr != s.end()) {
-      if (windows.empty() || isFirtElement(*itr)) {
-        windows.push(*itr);
-      } else {
-        if (isMatch(windows.top(), *itr)) {
-          windows.pop();
-        } else {
-          return false;
-        }
-      }
-      itr++;
-    }
-    return windows.empty();
-  }
-
   class LongestCommonPrefix {
    public:
     string commonPrefix(string left, string right) {
@@ -117,7 +125,6 @@ class StingSolution : public Solution {
       }
       return result;
     }
-
   };
 
 };
