@@ -2,9 +2,9 @@
 #include "ListNodeSolution.h"
 #include "VectorSolution.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+  std::cout << "Hello, World!" << std::endl;
 //    ListNodeSolution::Test();
-VectorSolution::Test();
+  VectorSolution::Test();
 
-    return 0;
+  return 0;
 }
