@@ -12,12 +12,29 @@ struct ListNode {
   ListNode *next;
   ListNode(int x) : val(x), next(nullptr) {}
 };
-
+/**
+ * 对于链表问题，返回结果为头结点时，通常需要先初始化一个哨兵节点 pre，
+ * 该指针的下一个节点指向真正的头结点head。使用哨兵节点的目的在于
+ * 链表初始化时无可用节点值，而且链表构造过程需要指针移动，
+ * 进而会导致头指针丢失，无法返回结果
+ */
 class ListNodeSolution : public Solution {
  public:
   void Test() override;
  private:
   // *************** Start of HOT  *****************//
+  // 反转一个单链表
+  ListNode *reverseList(ListNode *head) {
+    ListNode preNode(0);
+    while (head) {
+      auto next = head->next;
+      head->next = preNode.next;
+      preNode.next = head;
+      head = next;
+    }
+    return preNode.next;
+  }
+
   ListNode *removeNthFromEnd(ListNode *head, int n) {
     if (n <= 0) {
       return head;
@@ -99,6 +116,34 @@ class ListNodeSolution : public Solution {
 
     }
     return pA;
+  }
+  /*
+   * 给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，
+   * 并且它们的每个节点只能存储一位数字。如果，我们将这两个数相加起来，
+   * 则会返回一个新的链表来表示它们的和。
+   *(2 -> 4 -> 3) + (5 -> 6 -> 4) = 7 -> 0 -> 8
+   * */
+  ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+    // 考虑进位，0或者1
+    int carry = 0;
+    // 使用哨兵节点
+    ListNode preHead(0);
+    auto root = &preHead;
+    while (l1 || l2) {
+      int x = l1 ? l1->val : 0;
+      int y = l2 ? l2->val : 0;
+      int all = (carry + x + y);
+      carry = all / 10;
+      root->next = new ListNode(all % 10);
+      root = root->next;
+      l1 = l1 ? l1->next : nullptr;
+      l2 = l2 ? l2->next : nullptr;
+    }
+    // 求和运算最后可能出现额外的进位，比如5+5=10
+    if (carry > 0) {
+      root->next = new ListNode(carry);
+    }
+    return preHead.next;
   }
   // *************** End of HOT  *****************//
 
