@@ -49,6 +49,7 @@ void TreeNodeSolution::Test() {
   TreeNode node3 = 3;
   root.right = &node2;
   node2.left = &node3;
+
   auto res = inorderTraversal(&root);
   PrintVector(res);
 //  PrintNodeLevelWithNull(&root);

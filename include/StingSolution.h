@@ -64,22 +64,6 @@ class StingSolution : public Solution {
     }
   }; // end of Parentheses
   // *************** End of HOT  *****************//
-
-  int reverse(int x) {
-    int y = 0;
-    while (x != 0) {
-      int pop = x % 10;
-      if ((y > INT_MAX / 10) || (y == INT_MAX / 10 && pop > INT_MAX % 10)) {
-        return 0;
-      }
-      if (y < INT_MIN / 10 || (y == INT_MIN / 10 && pop < INT_MIN % 10)) {
-        return 0;
-      }
-      y = y * 10 + pop;
-      x = x / 10;
-    }
-    return y;
-  }
   class LongestCommonPrefix {
    public:
     string commonPrefix(string left, string right) {
