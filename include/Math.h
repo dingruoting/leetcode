@@ -5,6 +5,7 @@
 #ifndef CODING_MATH_H
 #define CODING_MATH_H
 #include "Solution.h"
+#include <limits.h>
 class Math : public Solution {
  public:
   // *************** Start of HOT  *****************//
