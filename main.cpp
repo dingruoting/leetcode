@@ -5,17 +5,20 @@
 #include "include/Math.h"
 #include "include/Hash.h"
 #include "include/RandomList.h"
+#include "include/language.h"
+
 int main() {
-  std::cout << "Hello, World!" << std::endl;
-  Solution *s = nullptr;
+    std::cout << "Hello, World!" << std::endl;
+    Solution *s = nullptr;
 //  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //  s = new Math();
 //  s = new ListNodeSolution();
-  s = new RandomList();
+//  s = new RandomList();
 //  s = new Hash();
-  s->Test();
-  delete s;
+    s = new Language();
+    s->Test();
+    delete s;
 
-  return 0;
+    return 0;
 }
