@@ -5,31 +5,40 @@
 #include "../include/language.h"
 
 class Empty {
-
 };
 
-class HasVirtualFunc {
+class Base {
 public:
-    virtual void Func1() {}
+    virtual void Func() {
+    }
+
+    void Func2(int num_in) {
+        num = num_in;
+    }
+
+    static void G_Func() { g_num = 10; }
+
+    int num = 4;
+    static long g_num;
 };
 
-class VirtualParent : public virtual Empty {
-
+class Kid1 : public Base {
 };
 
-class VirtualParent2 : public virtual Empty {
-
-};
-
-class VirtualParent3 : public VirtualParent, public VirtualParent2 {
-
+class Kid2 : public Base {
+public:
+    void Func() override {
+    }
 };
 
 void Language::Test() {
-    std::cout << "start language test" << std::endl;
     std::cout << "sizeof(Empty) = " << sizeof(Empty) << std::endl;
-    std::cout << "sizeof(HasVirtualFunc) = " << sizeof(HasVirtualFunc) << std::endl;
+    Base base;
+    Kid1 kid1;
+    Kid2 kid2;
+    base.Func2(0x12345);
+    std::cout << "sizeof(int) = " << sizeof(int) << std::endl;
+    std::cout << "sizeof(long) = " << sizeof(long) << std::endl;
+    std::cout << "sizeof(Base) = " << sizeof(Base) << std::endl;
     std::cout << "sizeof(void*) = " << sizeof(void *) << std::endl;
-    std::cout << "sizeof(VirtualParent) = " << sizeof(VirtualParent) << std::endl;
-    std::cout << "sizeof(VirtualParent3) = " << sizeof(VirtualParent3) << std::endl;
 }
