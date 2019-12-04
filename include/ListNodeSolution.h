@@ -29,11 +29,17 @@ private:
     // *************** Start of HOT  *****************//
     // 反转一个单链表
     ListNode *reverseList(ListNode *head) {
+        // preNode的下一个节点永远指向反转好的链表起始
         ListNode preNode(0);
+        // 从头到尾遍历整个链表
         while (head) {
+            // 暂存当前节点的下一个节点，下一轮遍历
             auto next = head->next;
+            // 将当前节点的下一个节点更新为已反转好的链表起始
             head->next = preNode.next;
+            // 更新反转好的链表起始
             preNode.next = head;
+            // 切换到下一个节点
             head = next;
         }
         return preNode.next;
