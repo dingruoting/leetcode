@@ -9,6 +9,6 @@ void Math::Test() {
 //  std::cout << "single num is " << singleNumber(data) << std::endl;
 //    std::cout << hammingWeight(0b1110001) << std::endl;
 //    std::cout <<hammingDistance(0b1110,0b0100)<< std::endl;
-std::cout << isPowerOfFour(0b100) << std::endl;
-    std::cout << isPowerOfFour(0b110) << std::endl;
+    std::cout << isPowerOfTwo(0b100) << std::endl;
+    std::cout << isPowerOfTwo(0b110) << std::endl;
 }

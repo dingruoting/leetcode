@@ -65,7 +65,6 @@ public:
         return (num & (num - 1)) == 0;
     }
 
-
     // *************** End of HOT  *****************//
     void Test() override;
 };
