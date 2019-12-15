@@ -5,8 +5,6 @@
 #include "../include/language.h"
 #include "../include/Language/virtual_table.h"
 #include "../include/Language/coroutine_jmp.h"
-#include "../include/Language/consumer_productor_pthread.h"
-#include "../include/Language/coroutine_ucontext.h"
 
 void Language::Test() {
 virtual_table::Test();
