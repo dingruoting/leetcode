@@ -12,13 +12,13 @@ int main() {
 
     std::cout << "Hello, World!" << std::endl;
     Solution *s = nullptr;
-//  s = new VectorSolution();
+  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //    s = new Math();
 //  s = new ListNodeSolution();
 //  s = new RandomList();
 //  s = new Hash();
-    s = new Language();
+//    s = new Language();
     s->Test();
     delete s;
 //    LRUCache obj(2);
