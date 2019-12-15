@@ -69,24 +69,22 @@ private:
         return prehead.next;
     }
 
+    // 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的
     ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
-        // 迭代法 哨兵节点
-        ListNode *pre_head = new ListNode(0);
-        auto begin = pre_head;
+        ListNode preMode(0);
+        auto head = &preMode;
         while (l1 && l2) {
             if (l1->val < l2->val) {
-                pre_head->next = l1;
+                head->next = l1;
                 l1 = l1->next;
             } else {
-                pre_head->next = l2;
+                head->next = l2;
                 l2 = l2->next;
             }
-            pre_head = pre_head->next;
+            head = head->next;
         }
-        pre_head->next = l1 ? l1 : l2;
-        auto output = begin->next;
-        delete begin;
-        return output;
+        head->next = l1 ? l1 : l2;
+        return preMode.next;
     }
 
     ListNode *detectCycle(ListNode *head) {

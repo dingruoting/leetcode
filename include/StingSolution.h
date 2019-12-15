@@ -10,6 +10,7 @@ class StingSolution : public Solution {
   void Test() override;
  private:
   // *************** Start of HOT  *****************//
+  // 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
   int lengthOfLongestSubstring(string s) {
     // 哈希表，滑动窗口 O(n)
     int max_length = 0;
