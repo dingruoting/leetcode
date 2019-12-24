@@ -7,25 +7,26 @@
 #include "include/RandomList.h"
 #include "include/language.h"
 #include "include/LRUCache.h"
-
+#include "include/GraphSolution.h"
 int main() {
 
-    std::cout << "Hello, World!" << std::endl;
-    Solution *s = nullptr;
-  s = new VectorSolution();
+  std::cout << "Hello, World!" << std::endl;
+  Solution *s = nullptr;
+  s = new GraphSolution();
+//  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //    s = new Math();
 //  s = new ListNodeSolution();
 //  s = new RandomList();
 //  s = new Hash();
 //    s = new Language();
-    s->Test();
-    delete s;
+  s->Test();
+  delete s;
 //    LRUCache obj(2);
 //    obj.put(1,1);
 //    obj.put(2,2);
 //   std::cout << obj.get(1) << std::endl;
 //    obj.put(3,3);
 //    std::cout << obj.get(2) << std::endl;
-    return 0;
+  return 0;
 }

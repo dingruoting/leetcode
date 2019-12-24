@@ -34,7 +34,7 @@ void VectorSolution::Test() {
 //    cout << ans[i] << endl;
 //  }
 
-  auto ans = intersection2(data1, data2);
+  auto ans = intersection(data1, data2);
   for (auto i = 0; i < ans.size(); ++i) {
     cout << ans[i] << endl;
   }
