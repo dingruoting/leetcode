@@ -14,14 +14,16 @@ void PrintVectorVector(vector<vector<int>> datas) {
 }
 
 void VectorSolution::Test() {
-  vector<int> data1 = {1, 66, 66,3};
-  vector<int> data2 = {66, 5, 68,66};
+//  vector<int> data1 = {1, 66, 66,3};
+//  vector<int> data2 = {66, 5, 68,66};
 //    vector<int> data3 = {7,8,9};
 //  vector<vector<int>> testdata = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 //  rotate(testdata);
 //  PrintVectorVector(testdata);
-//    vector<int> data = {7, 1, 5, 3, 6, 4};
-//    std::cout << "max profix is " << maxProfit(data) << std::endl;
+  vector<int> data = {7, 1, 5, 3, 6, 4};
+  std::cout << "max profix is " << maxProfit2(data) << std::endl;
+  data = {1,2,3,4,5};
+  std::cout << "max profix is " << maxProfit2(data) << std::endl;
 //  vector<int> data = {4, 5, 6, 7, 0, 1, 2};
 //  std::cout << "search " << search(data, 0) << std::endl;
 //  vector<int> data = {1, 2, 5, 6, 7};
@@ -34,8 +36,8 @@ void VectorSolution::Test() {
 //    cout << ans[i] << endl;
 //  }
 
-  auto ans = intersection(data1, data2);
-  for (auto i = 0; i < ans.size(); ++i) {
-    cout << ans[i] << endl;
-  }
+//  auto ans = intersection(data1, data2);
+//  for (auto i = 0; i < ans.size(); ++i) {
+//    cout << ans[i] << endl;
+//  }
 }

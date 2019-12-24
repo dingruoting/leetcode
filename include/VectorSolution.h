@@ -42,6 +42,19 @@ class VectorSolution : public Solution {
     }
     return profix;
   }
+  // 允许多次交易 斜坡上爬升并持续增加从连续交易中获得的利润
+  int maxProfit2(vector<int> &prices) {
+    if (prices.empty()) {
+      return 0;
+    }
+    int profix = 0;
+    for (auto i = 1; i < prices.size(); ++i) {
+      if(prices[i] > prices[i-1]){
+        profix+= prices[i] - prices[i-1];
+      }
+    }
+    return profix;
+  }
   // 阿里淘系 面试题，N个有序数组的交集
   vector<int> findCommonElems1(vector<vector<int>> Arrays) {
     if (Arrays.empty()) {

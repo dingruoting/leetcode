@@ -12,8 +12,8 @@ int main() {
 
   std::cout << "Hello, World!" << std::endl;
   Solution *s = nullptr;
-  s = new GraphSolution();
-//  s = new VectorSolution();
+//  s = new GraphSolution();
+  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //    s = new Math();
 //  s = new ListNodeSolution();
