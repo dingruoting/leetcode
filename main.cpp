@@ -18,9 +18,9 @@ int main() {
 //  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //    s = new Math();
-  s = new ListNodeSolution();
+//  s = new ListNodeSolution();
 //  s = new RandomList();
-//  s = new Hash();
+  s = new Hash();
 //    s = new Language();
   s->Test();
   delete s;
