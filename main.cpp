@@ -8,12 +8,14 @@
 #include "include/language.h"
 #include "include/LRUCache.h"
 #include "include/GraphSolution.h"
+#include "include/SearchSolution.h"
 int main() {
 
   std::cout << "Hello, World!" << std::endl;
   Solution *s = nullptr;
+  s = new SearchSolution();
 //  s = new GraphSolution();
-  s = new VectorSolution();
+//  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //    s = new Math();
 //  s = new ListNodeSolution();
