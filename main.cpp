@@ -13,12 +13,12 @@ int main() {
 
   std::cout << "Hello, World!" << std::endl;
   Solution *s = nullptr;
-  s = new SearchSolution();
+//  s = new SearchSolution();
 //  s = new GraphSolution();
 //  s = new VectorSolution();
 //  s = new TreeNodeSolution();
 //    s = new Math();
-//  s = new ListNodeSolution();
+  s = new ListNodeSolution();
 //  s = new RandomList();
 //  s = new Hash();
 //    s = new Language();

@@ -18,17 +18,20 @@ void ListNodeSolution::Test() {
   ListNode second2(6);
   ListNode third(6);
   ListNode third2(4);
+  ListNode fourth(4);
   head.next = &second;
   second.next = &third;
-  third.next = &third2;
+  third.next = &fourth;
   head2.next = &second2;
   second2.next = &third2;
   PrintListNode(&head);
-  auto ans = reverseList(&head);
-  PrintListNode(ans);
-//  PrintListNode(&head2);
-//  auto sum = addTwoNumbers(&head,&head2);
-//  PrintListNode(sum);
+  std::cout << "+" << std::endl;
+//  auto ans = reverseList(&head);
+//  PrintListNode(ans);
+  PrintListNode(&head2);
+  std::cout << "=" << std::endl;
+  auto sum = addTwoNumbers(&head,&head2);
+  PrintListNode(sum);
 
 //  ListNode head(1);
 //  ListNode second(2);
