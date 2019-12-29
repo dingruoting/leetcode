@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 file(GLOB_RECURSE SOURCE_SRC "src/*.cpp")
 
-add_executable(Coding main.cpp ${SOURCE_SRC})
+add_executable(Coding main.cpp ${SOURCE_SRC} src/DynamicProgramming.cpp include/DynamicProgramming.h)

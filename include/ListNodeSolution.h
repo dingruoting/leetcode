@@ -7,6 +7,8 @@
 
 #include "Solution.h"
 
+// O(1) 删除链表里的指定节点：不删除该节点，把下一个节点的内容复制到当前节点，删除下一节点。
+
 // * Definition for singly-linked list.
 struct ListNode {
   int val;

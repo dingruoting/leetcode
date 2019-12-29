@@ -9,6 +9,7 @@
 #include "include/LRUCache.h"
 #include "include/GraphSolution.h"
 #include "include/SearchSolution.h"
+#include "include/DynamicProgramming.h"
 int main() {
 
   std::cout << "Hello, World!" << std::endl;
@@ -20,7 +21,8 @@ int main() {
 //    s = new Math();
 //  s = new ListNodeSolution();
 //  s = new RandomList();
-  s = new Hash();
+//  s = new Hash();
+  s = new DynamicProgramming();
 //    s = new Language();
   s->Test();
   delete s;

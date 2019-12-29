@@ -7,7 +7,10 @@
 
 #include "Solution.h"
 #include <limits.h>
-
+// 判断奇数还是偶数： num & 0x1 == 1
+// 用右移来替代2的除法更高效
+// 大数问题，防止溢出
+// 可以用字符串/数组表示大数
 class Math : public Solution {
  public:
   // *************** Start of HOT  *****************//
