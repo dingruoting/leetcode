@@ -16,6 +16,7 @@ void DynamicProgramming::Test() {
 //    std::cout << "maxSubArray is " << maxSubArray(data) << std::endl;
 //    std::cout << "climbStairs is " << climbStairs(4) << std::endl;
 //    std::vector<int> data = {2, 7, 9, 3, 1};
-    std::vector<int> data = {2, 1, 1, 2};
-    std::cout << "max rob is " << rob(data) << std::endl;
+//    std::vector<int> data = {2, 1, 1, 2};
+//    std::cout << "max rob is " << rob(data) << std::endl;
+  std::cout << "palindromic size is " << countSubstrings("aaa") << std::endl;
 };
