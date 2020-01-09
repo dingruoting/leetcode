@@ -14,7 +14,7 @@ int main() {
 
   std::cout << "Hello, World!" << std::endl;
   Solution *s = nullptr;
-//  s = new SearchSolution();
+  s = new SearchSolution();
 //  s = new GraphSolution();
 //  s = new VectorSolution();
 //  s = new TreeNodeSolution();
@@ -22,7 +22,7 @@ int main() {
 //  s = new ListNodeSolution();
 //  s = new RandomList();
 //  s = new Hash();
-  s = new DynamicProgramming();
+//  s = new DynamicProgramming();
 //    s = new Language();
   s->Test();
   delete s;

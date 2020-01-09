@@ -62,6 +62,28 @@ class SearchSolution : public Solution {
     }
     return p - 1;
   }
+// 实现 pow(x, n) ，即计算 x 的 n 次幂函数。
+// 关注边界条件，尤其是正整数和负整数的不同范围限制
+// myPow(x,n) = 1/myPow(x,-n)  = myPow(1/x,-n) 当n等于-2147483648时，-n情况int型正数无法表示
+//  myPow(1/x,-n) =  myPow(1/x,-n-1)*x;
+  double myPow(double x, int n) {
+    if (n == 0) {
+      return 1;
+    }
+    double extra = 1;
+    if (n < 0) {
+      x = 1 / x;
+      n = -1 * n - 1;
+      extra = x;
+    }
+    auto half = myPow(x, n / 2);
+    if (n % 2 == 0) {
+      return half * half * extra;
+    } else {
+      return half * half * x * extra;
+    }
+  }
+
   int searchBound(vector<int> &nums,
                   int target,
                   bool lower_bound) {

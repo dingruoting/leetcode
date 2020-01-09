@@ -67,16 +67,18 @@ void SearchSolution::Test() {
 //  printTestResult({1, 2, 3}, 3, 2);
 //  printTestResult({1, 3}, 3, 1);
 //  printTestResult({5, 1, 3}, 3, 2);
-  printTestResult({}, 0, -1);
-  printTestResult({3, 1}, 1, 1);
-
-  printTestResult({8, 9, 2, 3, 4}, 9, 2);
-  printTestResult({1, 2, 3, 4, 5, 6}, 3, 1);
-  printTestResult({1, 2, 3}, 3, 1);
-  printTestResult({2,2,2,0,1}, 3, 0);
-  printTestResult({3,1,3}, 3, 1);
-  printTestResult({3,3,1,3}, 3, 1);
-  printTestResult({}, 0, -1);
-  printTestResult({3, 1, 1}, 1, 1);
-
+//  printTestResult({}, 0, -1);
+//  printTestResult({3, 1}, 1, 1);
+//
+//  printTestResult({8, 9, 2, 3, 4}, 9, 2);
+//  printTestResult({1, 2, 3, 4, 5, 6}, 3, 1);
+//  printTestResult({1, 2, 3}, 3, 1);
+//  printTestResult({2,2,2,0,1}, 3, 0);
+//  printTestResult({3,1,3}, 3, 1);
+//  printTestResult({3,3,1,3}, 3, 1);
+//  printTestResult({}, 0, -1);
+//  printTestResult({3, 1, 1}, 1, 1);
+  std::cout << myPow(2, 10) << std::endl;
+  std::cout << myPow(2, -2) << std::endl;
+  std::cout << myPow(1.00000, -2147483648) << std::endl;
 }
